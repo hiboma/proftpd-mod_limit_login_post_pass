@@ -29,7 +29,7 @@ MODRET limit_login_post_pass(cmd_rec *cmd) {
 }
 
 static cmdtable limit_login_cmdtab[] = {
-  { POST_CMD, C_PASS,	G_WRITE,	 limit_login_post_pass,	TRUE,	CL_WRITE },
+  { POST_CMD, C_PASS,	G_NONE,	 limit_login_post_pass,	TRUE,	CL_AUTH },
   { 0, NULL }
 };
 
