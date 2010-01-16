@@ -1,0 +1,22 @@
+### you must need dso-supported proftpd ( ./configure --enabole-dso )  ###
+
+### 1: compile && install
+
+   $ /path/to/proftpd/bin/prxs -c mod_limit_login_post_pass.c -i
+
+### 2: edit config
+
+   $ emacs proftpd.conf
+   LoadModule mod_limit_login_post_pass.c
+
+### 3: restart proftpd
+
+### 4: edit .ftpaccess
+
+    <Limit LOGIN>
+      DenyAll
+    </Limit>
+
+### 5: let's test
+
+    $ ftp localhost 
