@@ -1,0 +1,34 @@
+ 
+                       mod_limit_login_post_pass.c
+                 =======================================
+
+------------
+description
+------------
+
+    o .ftpaccess内で <Limit LOGIN> を有効にするモジュール
+    o /etc/proftpd.confを編集できる権限をもたないユーザーにもログイン制限を与えた
+      い場合に便利だと思います。
+
+------------
+usage
+------------
+
+    o /etc/proftpd.conf
+    
+        LoadModule mod_limit_login_post_pass.c
+
+    o $HOME/.ftpaccess
+    
+        <Limit LOGIN>
+           DenyAll
+        </Limit>
+
+    o try to connect
+
+        ftp localhost
+    
+    o /var/log/secure
+
+       Jan 27 18:14:56 *** proftpd[10219]: ***.***.jp (*.*.*.*[*.*.*.*]) - hoge: Limit access denies login.
+       Jan 27 18:14:56 *** proftpd[10219]: ***.***.jp (*.*.*.*[*.*.*.*]) - FTP session closed.
