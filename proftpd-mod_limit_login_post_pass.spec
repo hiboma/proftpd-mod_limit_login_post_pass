@@ -45,5 +45,5 @@ libtool --mode=install /usr/bin/install -c %{module_name}.la ${RPM_BUILD_ROOT}/%
 %{_libexecdir}/proftpd/%{module_name}.so
 
 %changelog
-* Mon Feb 8 2010 Hiroya Ito <hiroya@gmail.com> 0.1-1
+* Mon Feb 8 2010 Hiroya Ito <hiroyan@gmail.com> 0.1-1
  - wrote spec
