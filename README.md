@@ -9,7 +9,7 @@
 
  * /etc/proftpd.conf
 
- ```
+```
 LoadModule mod_limit_login_post_pass.c
 ```
 
