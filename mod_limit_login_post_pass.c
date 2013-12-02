@@ -6,7 +6,7 @@ MODRET limit_login_post_pass(cmd_rec *cmd) {
      * PASSを通過すると cmd->server->conf にユーザー名が入る様子
      * get_param_ptr()で取れる
      */
-    char *user = get_param_ptr(cmd->server->conf, C_USER, FALSE);
+    char *user = get_param_ptr(cmd->server->conf, "UserName", FALSE);
     if(!user) {
         pr_log_auth(PR_LOG_NOTICE, "User unknown. Something Wrong");
         pr_response_send(R_530, _("Login incorrect."));
